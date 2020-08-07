@@ -1,1 +1,1 @@
-extremely basic boilerplate for beginning a node/express API with TypeScript
+extremely basic boilerplate for beginning a node/express/pg API with TypeScript
