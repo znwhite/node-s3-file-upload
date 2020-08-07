@@ -1,4 +1,5 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
+require('dotenv').config();
 
 const app: Application = express();
 
@@ -11,7 +12,7 @@ app.use('/test', test);
 const add = (a: number, b: number): number => a + b; 
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
-    const numby = add(4,5).toString();
+    const numby: string = add(4,5).toString();
     res.send(numby);
 })
 
