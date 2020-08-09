@@ -32,7 +32,7 @@ app.use('/api', graphqlHTTP({
 
 const add = (a: number, b: number): number => a + b; 
 
-app.get('/', (req: Request, res: Response, next: NextFunction) => {
+app.get('/number', (req: Request, res: Response, next: NextFunction) => {
     const numby: string = add(4,5).toString();
     res.send(numby);
 })
