@@ -4,13 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var bodyParser = require('body-parser');
+var cors = require('cors');
+require('dotenv').config();
 var app = express_1.default();
-// route imports
-var test = require('./routes/test/index');
-// use routes
-app.use('/test', test);
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+// enable cors
+app.use(cors());
 var add = function (a, b) { return a + b; };
-app.get('/', function (req, res, next) {
+app.get('/number', function (req, res, next) {
     var numby = add(4, 5).toString();
     res.send(numby);
 });
