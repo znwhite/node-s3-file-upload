@@ -1,13 +1,34 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const { graphqlHTTP } = require('express-graphql');
+const graphql = require("graphql");
+const { GraphQLSchema } = graphql;
+const { query } = require("./graphql/schemas/queries");
+const { mutation } = require("./graphql/schemas/mutation");
+
 require('dotenv').config();
 
 const app: Application = express();
 
-// route imports
-const test = require('./routes/test/index');
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(bodyParser.json())
 
-// use routes
-app.use('/test', test);
+// enable cors
+app.use(cors());
+
+const schema = new GraphQLSchema({
+    query,
+    mutation
+  });
+
+app.use('/api', graphqlHTTP({
+    schema,
+    graphiql: true
+  }));
 
 const add = (a: number, b: number): number => a + b; 
 
