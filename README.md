@@ -1,6 +1,6 @@
 <h4>A minimal boilerplate for beginning a node/express/pg/grpahql/typescript API.</h4>
 
-It establishes a pool connection to PostgreSQL instance, and assumes it has a database with a table called <code>fruit</code> with fields "id", "name", and "datecreated."
+This server will establish a pool connection to a PostgreSQL instance, and assume it has a database with a table called <code>fruit</code> with fields "id", "name", and "datecreated."
 
 This will connect well to an AWS RDS PostgreSQL instance, for example. 
 
