@@ -9,8 +9,4 @@ const pool = new Pool({
   port: process.env.PG_PORT,
 });
 
-module.exports = {
-  query: (text: string, params: any, callback: any) => {
-    return pool.query(text, params, callback);
-  },
-};
+module.exports = pool;
