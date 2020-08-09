@@ -1,4 +1,4 @@
-<h4>A minimal boilerplate for beginning a node/express/pg/grpahql/typescript API.</h4>
+<h3>A minimal boilerplate for beginning a node/express/pg/graphql/typescript API.</h3>
 
 This server will establish a pool connection to a PostgreSQL instance, and assume it has a database with a table called <code>fruit</code> with fields "id", "name", and "datecreated."
 
