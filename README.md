@@ -1,4 +1,4 @@
-extremely basic boilerplate for beginning a node/express/pg API with TypeScript
+A minimal boilerplate for beginning a node/express/pg/grpahql/typescript API. 
 
 <h2>Viable queries</h2>
 
